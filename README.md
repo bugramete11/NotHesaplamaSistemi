@@ -2,7 +2,7 @@
 
 ASP.NET Core MVC mimarisiyle geliştirilmiş; vize, ödev ve final ağırlıklarını dinamik olarak hesaplayan, üniversite baraj kurallarını uygulayan duyarlı (responsive) bir web uygulamasıdır.
 
-🔗 **Canlı Demo:** [nothesaplamasistemi.runasp.net](https://nothesaplamasistemi.runasp.net)
+🔗 **SİTE:** [nothesaplamasistemi.runasp.net](https://nothesaplamasistemi.runasp.net)
 
 ---
 
