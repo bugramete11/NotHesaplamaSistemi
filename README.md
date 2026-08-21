@@ -76,4 +76,4 @@ Projeyi kendi bilgisayarınızda çalıştırmak için:
 
 1. Depoyu klonlayın:
    ```bash
-   git clone https://github.com/bugramete11/NotHesaplamaSistemi
+   git clone https://github.com/bugramete11/NotHesaplamaSistemi/tree/master/NotHesaplamaSistemi
