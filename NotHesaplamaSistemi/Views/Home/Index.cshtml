@@ -1,0 +1,89 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Üniversite Not Asistanı</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>Genel Başarı Ort. Hesaplayıcı</h1>
+        </header>
+
+        <form method="post" asp-action="Hesapla" class="calculator-panel">
+
+            <!-- VİZE ALANI -->
+            <div class="input-group">
+                <label>Vize Notunuz:</label>
+                <input type="number" step="0.1" name="vizeNotu" placeholder="Örn: 41" required>
+            </div>
+            <div class="input-group">
+                <label>Vize Ağırlığı (%):</label>
+                <input type="number" name="vizeAgirligi" placeholder="Örn: 30" required>
+            </div>
+
+            <hr style="width:100%; border:0; border-top:1px solid #e5e7eb; margin: 10px 0;">
+
+            <!-- ÖDEV ALANI -->
+            <div class="input-group">
+                <label>Ödev Notunuz:</label>
+                <input type="number" step="0.1" name="odevNotu" placeholder="Örn: 74" required>
+            </div>
+            <div class="input-group">
+                <label>Ödev Ağırlığı (%):</label>
+                <input type="number" name="odevAgirligi" placeholder="Örn: 10" required>
+            </div>
+
+            <hr style="width:100%; border:0; border-top:1px solid #e5e7eb; margin: 10px 0;">
+
+            <!-- FİNAL ALANI -->
+            <div class="input-group">
+                <label>Final Notunuz:</label>
+                <input type="number" step="0.1" name="finalNotu" placeholder="Örn: 51" required>
+            </div>
+            <div class="input-group">
+                <label>Final Ağırlığı (%):</label>
+                <input type="number" name="finalAgirligi" placeholder="Örn: 60" required>
+            </div>
+
+            <hr style="width:100%; border:0; border-top:1px solid #e5e7eb; margin: 10px 0;">
+
+            <!-- GEÇME KRİTERİ (Geçme notu ayarlanabilir, Final kuralı HTML'de sadece bilgi olarak yazıyor) -->
+            <div class="input-group">
+                <label>Okulun Geçme Notu Sınırı:</label>
+                <input type="number" name="gecmeNotu" value="45" required>
+            </div>
+            <p style="font-size: 0.85rem; color: #e74c3c; margin-top: -15px; margin-bottom: 10px; text-align: right; font-weight: 500;">* Sistemde Finalden minimum 50 alma zorunluluğu sabittir.</p>
+
+            <button type="submit" class="calc-btn">Hesapla ve Durumu Gör</button>
+        </form>
+
+        <!-- SONUÇ EKRANI -->
+        <aside class="result-panel">
+            <h2>Genel Başarı Ort.</h2>
+
+            <div class="score-display" style="font-size: 3.5rem;">
+                @(ViewBag.Ortalama != null ? ViewBag.Ortalama : "0")
+            </div>
+
+            @if (ViewBag.Durum != null)
+            {
+                <h3 style="color: @ViewBag.Renk; margin-top: 15px; font-size: 1.8rem;">@ViewBag.Durum</h3>
+                <p style="color: #6b7280; margin-top: 5px; font-weight: 500;">@ViewBag.Mesaj</p>
+            }
+            else
+            {
+                <p style="margin-top: 20px;">Lütfen notlarınızı sol tarafa giriniz.</p>
+            }
+        </aside>
+    </div>
+
+</body>
+</html>
